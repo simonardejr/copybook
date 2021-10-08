@@ -23,6 +23,8 @@ class UserTableViewController: UITableViewController {
             }
         }
     }
+    
+    var userId: Int = 1
 
     // carregado em memória, mas não quer dizer que ela vai aparecer
     override func viewDidLoad() {
@@ -63,6 +65,23 @@ class UserTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let user = users[indexPath.row]
+        self.userId = user.id
+        
+        //performSegue(withIdentifier: "showalbum", sender: self)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier == "showalbum") {
+                let showAlbumViewController: AlbumTableViewController = segue.destination as! AlbumTableViewController
+                
+            showAlbumViewController.userId = self.userId
+        }
+    }
+    
     func getUsers(completion: @escaping(Result<[User], PostError>) -> Void) {
         guard let urlUser = URL(string: "\(kBaseUrl)/users") else { fatalError() }
         let dataTask = URLSession.shared.dataTask(with: urlUser) { data, response, error in
@@ -75,9 +94,9 @@ class UserTableViewController: UITableViewController {
                 let decoder = JSONDecoder()
                 let users = try? decoder.decode([User].self, from: jsonData)
                 completion(.success(users!))
-            } catch {
+            } /*catch {
                 completion(.failure(.canNotProcessData))
-            }
+            }*/
         }
         dataTask.resume()
     }

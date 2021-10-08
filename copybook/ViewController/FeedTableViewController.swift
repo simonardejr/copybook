@@ -122,9 +122,9 @@ class FeedTableViewController: UITableViewController {
                 let decoder = JSONDecoder()
                 let posts = try? decoder.decode([Post].self, from: jsonData)
                 completion(.success(posts!))
-            } catch {
+            } /*catch {
                 completion(.failure(.canNotProcessData))
-            }
+            }*/
         }
         dataTask.resume()
     }
@@ -141,9 +141,9 @@ class FeedTableViewController: UITableViewController {
                 let decoder = JSONDecoder()
                 let users = try? decoder.decode([User].self, from: jsonData)
                 completion(.success(users!))
-            } catch {
+            } /*catch {
                 completion(.failure(.canNotProcessData))
-            }
+            }*/
         }
         dataTask.resume()
     }

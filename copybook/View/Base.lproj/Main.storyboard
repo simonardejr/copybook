@@ -71,7 +71,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="JNW-fz-fXb" kind="show" id="f6G-iI-1Qn"/>
+                                    <segue destination="JNW-fz-fXb" kind="show" identifier="showalbum" id="f6G-iI-1Qn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

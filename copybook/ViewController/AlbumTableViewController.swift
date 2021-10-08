@@ -16,6 +16,8 @@ class AlbumTableViewController: UITableViewController {
         case canNotProcessData
     }
     
+    var userId: Int = 0
+    
     private var albums = [Album]() {
         didSet {
             DispatchQueue.main.async {
@@ -23,7 +25,19 @@ class AlbumTableViewController: UITableViewController {
             }
         }
     }
-
+    
+//    required init?(coder aDecoder: NSCoder) {
+//            super.init(coder: aDecoder)
+//    }
+    
+//    init(userId: Int) {
+//        self.userId = userId
+//        super.init(nibName: nil, bundle: nil)
+//        print("->>>")
+//        print(self.userId)
+//    }
+    
+    
     // carregado em memória, mas não quer dizer que ela vai aparecer
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +52,7 @@ class AlbumTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        getAlbumFromUser { [weak self] result in
+        getAlbumFromUser(userId: self.userId) { [weak self] result in
             switch result {
                 case .failure(let error):
                     print(error)
@@ -62,8 +76,9 @@ class AlbumTableViewController: UITableViewController {
         return cell
     }
 
-    func getAlbumFromUser(completion: @escaping(Result<[Album], PostError>) -> Void) {
-        guard let urlUser = URL(string: "\(kBaseUrl)/users/1/albums") else { fatalError() }
+    func getAlbumFromUser(userId id: Int, completion: @escaping(Result<[Album], PostError>) -> Void) {
+        print("\(kBaseUrl)/users/\(id)/albums")
+        guard let urlUser = URL(string: "\(kBaseUrl)/users/\(id)/albums") else { fatalError() }
         let dataTask = URLSession.shared.dataTask(with: urlUser) { data, response, error in
             guard let jsonData = data else {
                 completion(.failure(.noDataAvailable))
@@ -74,9 +89,9 @@ class AlbumTableViewController: UITableViewController {
                 let decoder = JSONDecoder()
                 let albums = try? decoder.decode([Album].self, from: jsonData)
                 completion(.success(albums!))
-            } catch {
+            } /*catch {
                 completion(.failure(.canNotProcessData))
-            }
+            }*/
         }
         dataTask.resume()
     }
