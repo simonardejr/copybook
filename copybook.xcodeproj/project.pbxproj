@@ -18,6 +18,11 @@
 		A79850BE2701290E009269FD /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79850BC2701290E009269FD /* FeedTableViewCell.swift */; };
 		A79850BF2701290E009269FD /* FeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A79850BD2701290E009269FD /* FeedTableViewCell.xib */; };
 		A79850C227013C59009269FD /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79850C127013C59009269FD /* FeedTableViewController.swift */; };
+		A7CFB7D7270FAD03009FA99F /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CFB7D6270FAD03009FA99F /* UserTableViewController.swift */; };
+		A7CFB7E3270FC920009FA99F /* AlbumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CFB7E2270FC920009FA99F /* AlbumTableViewController.swift */; };
+		A7CFB7E5270FC988009FA99F /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CFB7E4270FC988009FA99F /* Album.swift */; };
+		A7CFB7E7270FCEB3009FA99F /* AlbunsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CFB7E6270FCEB3009FA99F /* AlbunsCollectionViewController.swift */; };
+		A7CFB7E9270FCFF4009FA99F /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CFB7E8270FCFF4009FA99F /* ImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +39,11 @@
 		A79850BC2701290E009269FD /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		A79850BD2701290E009269FD /* FeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTableViewCell.xib; sourceTree = "<group>"; };
 		A79850C127013C59009269FD /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
+		A7CFB7D6270FAD03009FA99F /* UserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
+		A7CFB7E2270FC920009FA99F /* AlbumTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumTableViewController.swift; sourceTree = "<group>"; };
+		A7CFB7E4270FC988009FA99F /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		A7CFB7E6270FCEB3009FA99F /* AlbunsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbunsCollectionViewController.swift; sourceTree = "<group>"; };
+		A7CFB7E8270FCFF4009FA99F /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +63,7 @@
 				A729F3302703339C00AD36E7 /* Address.swift */,
 				A729F3312703339C00AD36E7 /* User.swift */,
 				A729F3322703339C00AD36E7 /* Post.swift */,
+				A7CFB7E4270FC988009FA99F /* Album.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -94,6 +105,7 @@
 				A79850AD270122E3009269FD /* Main.storyboard */,
 				A79850BC2701290E009269FD /* FeedTableViewCell.swift */,
 				A79850BD2701290E009269FD /* FeedTableViewCell.xib */,
+				A7CFB7E8270FCFF4009FA99F /* ImageCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -102,6 +114,9 @@
 			isa = PBXGroup;
 			children = (
 				A79850C127013C59009269FD /* FeedTableViewController.swift */,
+				A7CFB7D6270FAD03009FA99F /* UserTableViewController.swift */,
+				A7CFB7E2270FC920009FA99F /* AlbumTableViewController.swift */,
+				A7CFB7E6270FCEB3009FA99F /* AlbunsCollectionViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -183,7 +198,12 @@
 				A79850AA270122E3009269FD /* SceneDelegate.swift in Sources */,
 				A79850C227013C59009269FD /* FeedTableViewController.swift in Sources */,
 				A729F3352703339C00AD36E7 /* Post.swift in Sources */,
+				A7CFB7E9270FCFF4009FA99F /* ImageCollectionViewCell.swift in Sources */,
+				A7CFB7D7270FAD03009FA99F /* UserTableViewController.swift in Sources */,
+				A7CFB7E3270FC920009FA99F /* AlbumTableViewController.swift in Sources */,
 				A729F3332703339C00AD36E7 /* Address.swift in Sources */,
+				A7CFB7E5270FC988009FA99F /* Album.swift in Sources */,
+				A7CFB7E7270FCEB3009FA99F /* AlbunsCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

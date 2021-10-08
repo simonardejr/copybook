@@ -43,10 +43,10 @@ class FeedTableViewCell: UITableViewCell {
         //tableView.register(FeedTableViewCell.self, forCellReuseIdentifier: kReuseIdentifier)
     }
     
-    func setup(with post: Post?, andUser user: User?) {
+    func setup(with post: Post?, andUser user: User) {
         profilePicture.image = UIImage(data: try! Data(contentsOf: URL(string: "http://lorempixel.com.br/100/100")!))
         postImage.image = UIImage(data: try! Data(contentsOf: URL(string: "http://lorempixel.com.br/600/450")!))
-        givenName?.text = user?.name
+        givenName?.text = user.name
         postText?.text = post?.body
         postDate?.text = "quarta-feira, 10 de setembro de 2021"
         likes?.text = "\(Int.random(in: 0..<100)) likes"
